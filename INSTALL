@@ -1,0 +1,37 @@
+-----------
+-- climc --
+-----------
+
+* Required softwares *
+
+  You will need :
+
+  - asdf : http://www.cliki.net/asdf
+  - mcclim :
+  - cl-xmpp :
+
+* ASDF *
+
+  In /usr/share/common-lisp/systems, create a symbolic link
+  to the system definition file (climc.asd)
+  or
+  add the Climc directory to *central-directory* of ASDF :
+  (push "/directory/climc/" asdf:*central-registry*)
+
+* Load *
+
+  In the Lisp system :
+  (asdf:operate 'asdf:load-op 'climc)
+
+* Launch GUI *
+
+ CL-USER> (climc:start-climc (cons "xxxxx@gmail.com" "xxxxxx")
+                             '("contact1@gmail.com"
+			       "contact2@gmail.com"))
+
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[  ^L]*$"
+end:
