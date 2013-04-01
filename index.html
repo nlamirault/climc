@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>climc : A Common Lisp Instant Messaging Client.</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body style="width: 100%">
+<div id="header"><table cellspacing="0" cellpadding="0" width="100%"><tr>
+<td width="10"></td>
+<td valign="center"><b>climc : A Common Lisp Instant Messaging Client.</b></td>
+</tr></table></div>
+<div id="homepage" class="main">
+  <p>
+    Climc is a Common Lisp Instant Messaging Client. 
+    It is developed on <a href="http://www.debian.org"> Debian GNU/Linux </a>, using 
+    <a href="http://www.sbcl.org"> SBCL </a>.
+  </p>
+  <p>
+    climc was written
+    by <a href="mailto:nlamirault@gmail.com">Nicolas Lamirault</a>
+    and is available under a
+    <a href="http://www.opensource.org/licenses/mit-license.php"> MIT </a>
+    style license.
+  </p>
+
+  <h3>Installation using asdf-install</h3>
+  <p>Not yet.</p>
+
+  <h3>Manual Installation</h3>
+  <p>
+    Download source code from : <a href="http://code.google.com/p/climc/source/checkout"> Google Code </a>
+    
+  </p>
+  <p>
+    climc needs
+    <a href="http://common-lisp.net/project/mcclim/">McClim</a>, 
+    <a href="http://common-lisp.net/project/mcclim/">McClim-TrueType</a>, 
+    <a href="http://common-lisp.net/project/cl-xmpp/">cl-xmpp</a>,
+    <a href="http://www.weitz.de/cl-ppcre/">cl-ppcre</a>
+    and their dependencies.
+  </p>
+  <p>
+    <a href="http://www.cliki.net/asdf">ASDF</a> is used for
+    compilation.  Register the .asd file, e.g. by symlinking it,
+    then compile climc using <tt>asdf:operate</tt>.
+  </p>
+  <pre>$ ln -sf `pwd`/climc.asd /path/to/your/registry/
+* (asdf:operate 'asdf:load-op :climc)</pre>
+
+  <h3>Usage</h3>
+  <p>* (climc:start-climc) </p>
+
+  <h3>Screenshots</h3>
+  <ul>
+    <li>
+      A talk between Climc and Pidgin :<br>
+      <img src="climc-2008-08-01.png">
+    </li>
+  </ul>
+
+  <h3>Recent changes</h3>
+  <p><b>2009-02-01</b></p>
+  <ul>
+    <li>
+      A new web site.
+    </li>
+  </ul>
+  <p><b>2008-07-31</b></p>
+  <ul>
+    <li>
+      Project creation.
+    </li>
+  </ul>
+</div>
+</body>
+</html>
