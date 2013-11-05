@@ -12,12 +12,13 @@ Not yet.
 
 ### Manual installation
 
-**climc** needs McClim, McClim-TrueType, cl-xmpp, cl-ppcre and their dependencies.
-[ASDF]() is used for compilation
+**climc** needs [McClim](http://common-lisp.net/project/mcclim/), McClim-TrueType, [cl-xmpp](http://common-lisp.net/project/cl-xmpp/), [cl-ppcre](http://weitz.de/cl-ppcre/)
+and their dependencies.
+[ASDF](http://common-lisp.net/project/asdf/) is used for compilation
 Register the .asd file, e.g. by symlinking it, then compile climc using ``asdf:operate``.
 
     $ ln -sf `pwd`/climc.asd /path/to/your/registry/
-    * (asdf:operate 'asdf:load-op :climc)
+    CL-USER> (asdf:operate 'asdf:load-op :climc)
 
 
 ## Usage
