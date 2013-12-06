@@ -1,12 +1,14 @@
 Climc
 =====
 
+[![Build Status](https://travis-ci.org/nlamirault/climc.png)](https://travis-ci.org/nlamirault/climc)
+
 Climc is a Common Lisp Instant Messaging Client. It is developed on
 Debian GNU/Linux, using SBCL .
 
 ## Installation
 
-### Installation using asdf-install
+### Installation using [Quicklisp](http://www.quicklisp.org)
 
 Not yet.
 

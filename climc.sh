@@ -16,5 +16,5 @@ cp misc/init.lisp $TEST_ENV
 cd $TEST_ENV
 wget -q http://beta.quicklisp.org/quicklisp.lisp -O quicklisp.lisp
 sbcl --script init.lisp
-ln -s $PWD/.. ~/quicklisp/local-projects/climc
+ln -s $PWD/.. ./.quicklisp/local-projects/climc
 sbcl --script ../test/runtests.lisp

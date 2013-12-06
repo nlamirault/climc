@@ -19,5 +19,4 @@
 	       #:lisp-unit)
   :components
   ((:module :test
-	    :components ((:file "package")
-			 (:file "http" :depends-on ("package"))))))
+	    :components ((:file "package")))))

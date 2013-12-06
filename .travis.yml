@@ -1,0 +1,4 @@
+script: ./climc.sh
+before_install:
+    - sudo apt-get update
+    - sudo apt-get install sbcl
