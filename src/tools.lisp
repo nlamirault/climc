@@ -79,6 +79,5 @@
   "Get the home directory of Climc."
   (let ((directory (concatenate 'string
                                 (sb-ext:posix-getenv "HOME")
-                                "/"
-                                ".mcclim/climc/")))
+                                "/.config/")))
     (ensure-directories-exist directory)))

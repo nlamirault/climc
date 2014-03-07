@@ -27,7 +27,7 @@
   :licence "MIT License"
   :description "A common lisp Instant Messaging client."
   :depends-on (:mcclim
-               :mcclim-truetype
+               ;;:mcclim-truetype
                :cl-xmpp-tls
                :cl-ppcre)
   :components

@@ -19,8 +19,11 @@
   (load quicklisp-file))
 
 (ql:quickload "climc")
-(ql:quickload "tchoupi-test")
+(ql:quickload "climc-test")
 
 (setq lisp-unit:*print-failures* t)
 (setq lisp-unit:*print-errors* t)
 (setq lisp-unit:*print-summary* t)
+
+(climc:start-climc)
+
