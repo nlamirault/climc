@@ -18,5 +18,6 @@ wget -q http://beta.quicklisp.org/quicklisp.lisp -O quicklisp.lisp
 sbcl --script init.lisp
 ln -s $PWD/.. ./.quicklisp/local-projects/climc
 cd ..
+mkdir -p $HOME/.config
 cp etc/climcrc $HOME/.config/
 sbcl --script test/runtests.lisp
