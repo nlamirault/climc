@@ -20,4 +20,4 @@ ln -s $PWD/.. ./.quicklisp/local-projects/climc
 cd ..
 mkdir -p $HOME/.config
 cp etc/climcrc $HOME/.config/
-sbcl --script test/runtests.lisp
+sbcl --script climc-ci.lisp
