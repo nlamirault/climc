@@ -8,7 +8,7 @@ Debian GNU/Linux, using SBCL .
 
 ## Installation
 
-### Installation using asdf-install
+### Installation using [Quicklisp](http://www.quicklisp.org)
 
 Not yet.
 
