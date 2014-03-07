@@ -1,2 +1,2 @@
 (defparameter *climc-account* "climc")
-(defparameter *climc-account-emails* '("climc.email@gmail.com))
+(defparameter *climc-account-emails* '("climc.email@gmail.com"))
