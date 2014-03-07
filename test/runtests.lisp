@@ -17,7 +17,7 @@
 ;; 		      :name "quicklisp/setup" :type "lisp")))
 ;;   (format t "Quiclisp: ~s" quicklisp-file)
 ;;   (load quicklisp-file))
-(load "../.quicklisp/setup.lisp")
+;;(load ".lispenv/.quicklisp/setup.lisp")
 
 (ql:quickload "climc")
 (ql:quickload "climc-test")
