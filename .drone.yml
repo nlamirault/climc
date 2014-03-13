@@ -1,0 +1,4 @@
+image: base
+script:
+    - sudo apt-get install sbcl
+    - ./ci/climc-ci.sh
