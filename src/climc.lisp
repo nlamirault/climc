@@ -55,14 +55,14 @@
   0)
 
 
- (defun start-climc-app ()
-   "Lunch the IM client."
-   (let ((dir (get-climc-directory)))
-     (load (concatenate 'string dir "climcrc"))
-     (format t "Account : ~A~%Emails : ~A~%" *climc-account* *climc-account-emails*)
-     (unless (and *climc-account* *climc-account-emails*)
-       (error "Climc : configuration file problem."))
-     (launch-climc *climc-account* *climc-account-emails*)))
+(defun start-climc-app ()
+  "Lunch the IM client."
+  (let ((dir (get-climc-directory)))
+    (load (concatenate 'string dir "climcrc"))
+    (format t "Account : ~A~%Emails : ~A~%" *climc-account* *climc-account-emails*)
+    (unless (and *climc-account* *climc-account-emails*)
+      (error "Climc : configuration file problem."))
+    (launch-climc *climc-account* *climc-account-emails*)))
 
 
 (defun start-climc (&optional new-process-p)
@@ -77,7 +77,7 @@
 (defun stop-climc ()
   (when (and *im-client-process*
              (sb-thread:thread-alive-p *im-client-process*))
-    (sb-thread:destroy-thread *im-client-process*)))
+    (sb-thread:terminate-thread *im-client-process*)))
 
 
 
