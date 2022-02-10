@@ -31,9 +31,9 @@
 (define-im-client-command (com-xmpp-debug :name t :menu nil :keystroke (#\x :control))
     ()
    (when *xmpp-app*
-     (sb-thread:make-thread (lambda ()
-                              (clim:run-frame-top-level *xmpp-app*))
-                            :name "Climc Xmpp Debug")))
+     (bt:make-thread (lambda ()
+                       (clim:run-frame-top-level *xmpp-app*))
+                     :name "Climc Xmpp Debug")))
 
 
 (define-im-client-command (com-add-contact :name t :menu nil :keystroke (#\a :control))

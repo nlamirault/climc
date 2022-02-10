@@ -44,9 +44,9 @@
                             :password (cdr account))
           contacts (loop for email in emails
                          collect (make-instance 'contact :email email))
-          chat (sb-thread:make-thread (lambda ()
-                                        (start-im im))
-                                      :name "Climc-Xmpp"))
+          chat (bt:make-thread (lambda ()
+                                 (start-im im))
+                               :name "Climc-Xmpp"))
 ;;;     (sleep 10)
 ;;;     (loop for contact in contacts
 ;;;           do (send-presence-request im "PROBE")))
@@ -57,8 +57,11 @@
 
 (defun start-climc-app ()
   "Lunch the IM client."
-  (let ((dir (get-climc-directory)))
-    (load (concatenate 'string dir "climcrc"))
+  (let* ((dir (get-climc-directory))
+         (path (concatenate 'string dir "climcrc")))
+    (unless (probe-file path)
+      (error "Climc : configuration file ~s doesn't exist." path))
+    (load path)
     (format t "Account : ~A~%Emails : ~A~%" *climc-account* *climc-account-emails*)
     (unless (and *climc-account* *climc-account-emails*)
       (error "Climc : configuration file problem."))
@@ -68,16 +71,16 @@
 (defun start-climc (&optional new-process-p)
   (if new-process-p
       (setf *im-client-process*
-            (sb-thread:make-thread (lambda ()
-                                     (start-climc-app))
-                                   :name "Climc"))
+            (bt:make-thread (lambda ()
+                              (start-climc-app))
+                            :name "Climc"))
     (start-climc-app)))
 
 
 (defun stop-climc ()
   (when (and *im-client-process*
-             (sb-thread:thread-alive-p *im-client-process*))
-    (sb-thread:terminate-thread *im-client-process*)))
+             (bt:thread-alive-p *im-client-process*))
+    (bt:destroy-thread *im-client-process*)))
 
 
 
@@ -145,8 +148,8 @@
   (with-slots (im chat) im-client
     (stop-im im)
     (when (and chat
-               (sb-thread:thread-alive-p chat))
-      (sb-thread:terminate-thread chat))))
+               (bt:thread-alive-p chat))
+      (bt:destroy-thread chat))))
 
 
 ;; --------------
