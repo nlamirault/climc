@@ -77,7 +77,5 @@
 
 (defun get-climc-directory ()
   "Get the home directory of Climc."
-  (let ((directory (concatenate 'string
-                                (sb-ext:posix-getenv "HOME")
-                                "/.config/")))
+  (let ((directory (namestring (uiop:xdg-config-home))))
     (ensure-directories-exist directory)))
